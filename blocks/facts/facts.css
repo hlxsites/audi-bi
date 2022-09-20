@@ -1,0 +1,28 @@
+.facts-row {
+    display: flex;
+    justify-content: center;
+}
+
+.facts-row div {
+    padding: 30px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.facts-row div:first-child {
+    border-right: 1px solid white;
+}
+
+.facts-row div p:first-child {
+    font-size: 28px;
+    font-stretch: 130%;
+    font-weight: 700;
+}
+
+.block.facts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
