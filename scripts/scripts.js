@@ -256,6 +256,23 @@ export function readBlockConfig(block) {
 }
 
 /**
+ * Decorate external links to Google Maps
+ * @param {Element} $main The container element
+ */
+function decorateExternalLinks($main) {
+    $main.querySelectorAll('a').forEach((a) => {
+        const href = a.getAttribute('href');
+        if (
+            href.startsWith('https://goo.gl/maps/AFau1382UwmJURV47') ||
+            href.startsWith('https://www.google.com/maps')
+        ) {
+            a.setAttribute('target', '_blank');
+        }
+    });
+}
+
+
+/**
  * Decorates all sections in a container element.
  * @param {Element} $main The container element
  */
@@ -657,6 +674,7 @@ export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
+  decorateExternalLinks(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
