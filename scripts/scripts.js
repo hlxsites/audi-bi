@@ -260,17 +260,16 @@ export function readBlockConfig(block) {
  * @param {Element} $main The container element
  */
 function decorateExternalLinks($main) {
-    $main.querySelectorAll('a').forEach((a) => {
-        const href = a.getAttribute('href');
-        if (
-            href.startsWith('https://goo.gl/maps/AFau1382UwmJURV47') ||
-            href.startsWith('https://www.google.com/maps')
-        ) {
-            a.setAttribute('target', '_blank');
-        }
-    });
+  $main.querySelectorAll('a').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (
+      href.startsWith('https://goo.gl/maps/AFau1382UwmJURV47')
+            || href.startsWith('https://www.google.com/maps')
+    ) {
+      a.setAttribute('target', '_blank');
+    }
+  });
 }
-
 
 /**
  * Decorates all sections in a container element.
