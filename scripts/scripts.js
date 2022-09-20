@@ -627,6 +627,7 @@ window.addEventListener('error', (event) => {
 
 loadPage(document);
 
+// eslint-disable-next-line no-unused-vars
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
