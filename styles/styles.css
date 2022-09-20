@@ -15,9 +15,13 @@
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
   --background-color: #fff;
+  --cta-background-color: #000;
+  --active-background-color: #666;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
-  --text-color: #000;
+  --footer-background-color: #000;
+  --footer-text-color: #fff;
+  --text-color: #333;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -116,19 +120,21 @@ a.button:any-link, button {
   padding: 5px 30px;
   text-align: center;
   font-style: normal; 
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--cta-background-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  transition-timing-function: cubic-bezier(0.75, 0.02, 0.5, 1);
+  transition-duration: 250ms;
+  transition-property: color, background-color;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--active-background-color);
   cursor: pointer;
 }
 
@@ -212,12 +218,12 @@ main img {
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+    --heading-font-size-xxl: 48px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 30px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;  
   }
   
   .section > div {

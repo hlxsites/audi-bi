@@ -8,12 +8,11 @@
 }
 
 .cards > ul > li {
-    border: 1px solid var(--highlight-background-color);
-    background-color: var(--background-color)
+    border: 0;
 }
 
 .cards .cards-card-body {
-    margin: 16px;
+    margin: 0;
 }
 
 .cards .cards-card-image {
@@ -28,4 +27,37 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+}
+
+.cards.locations > ul > li h3 {
+    margin: 0 0 10px;
+    color: rgb(51 51 51);
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--heading-font-size-m);
+    letter-spacing: -0.015em;
+    text-decoration: none;
+}
+
+.cards.locations > ul > li p {
+    font-size: var(--heading-font-size-xs);
+    margin: 0;
+}
+
+.cards.locations > ul > li p.button-container {
+    margin: 10px 0 0;
+    font-weight: 400;
+}
+
+.cards.locations > ul > li a.button {
+    color: var(--cta-background-color);
+    background-color: unset;
+    font-size: var(--heading-font-size-xs);
+    padding: 0;
+    margin: 0;
+}
+
+.cards.locations > ul > li a.button::after {
+    content: ">";
+    margin-left: 0.25rem;
 }
