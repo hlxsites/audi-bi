@@ -2,7 +2,11 @@
 /* global describe it */
 
 import { readFile } from '@web/test-runner-commands';
-import { expect } from '@esm-bundle/chai';
+import chaiAsPromised from '@esm-bundle/chai-as-promised';
+import chai from '@esm-bundle/chai';
+
+chai.use(chaiAsPromised);
+const { expect } = chai;
 
 document.body.innerHTML = await readFile({ path: '../../scripts/dummy.html' });
 
@@ -29,9 +33,9 @@ describe('Header block', () => {
     expect(hamburger).to.exist;
     expect(nav).to.exist;
     hamburger.click();
-    expect(nav.getAttribute('aria-expanded')).to.equal('true');
+    await expect(sleep(201).then(() => nav.getAttribute('aria-expanded'))).to.eventually.equal('true');
     hamburger.click();
-    expect(nav.getAttribute('aria-expanded')).to.equal('false');
+    await expect(sleep(201).then(() => nav.getAttribute('aria-expanded'))).to.eventually.equal('false');
   });
 
   it('Section title shows and hides section', async () => {

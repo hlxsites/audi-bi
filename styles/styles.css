@@ -14,6 +14,7 @@
   font-family: audi;
   src: url("/fonts/AudiTypeVF.woff2") format('woff2');
   font-weight: normal;
+  font-display: swap;
 }
 
  :root {
@@ -26,13 +27,14 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --footer-background-color: #000;
-  --footer-text-color: #fff;
+  --footer-text-color: rgb(242 242 242);
   --text-color: #333;
 
   /* fonts */
   --body-font-family: audi, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --title-font-stretch: 130%;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -49,11 +51,11 @@
 
   /* nav height */
   --nav-height: 64px;
-
+  --separator-color: rgb(76 76 76);
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -118,12 +120,13 @@ pre {
 /* buttons */
 
 a.button:any-link, button {
+  font-size: 16px;
   font-family: var(--font-family-body);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 16px 32px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -246,4 +249,40 @@ main .section[data-section-status='initialized'] {
 
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+main .section.black {
+  background: black;
+  margin: 0;
+  color: white;
+}
+
+main .section.black div {
+  max-width: 500px;
+  text-align: center;
+}
+
+main h1, h2, h3 {
+  font-stretch: var(--title-font-stretch);
+  font-weight: 400;
+}
+
+main .section.black div h3 {
+  font-weight: 400;
+  line-height: 40px;
+  font-size: 28px;
+}
+
+main .section.black div p {
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.8em;
+}
+
+.default-content-wrapper {
+  text-align: center;
+}
+
+.section.large-title h2 {
+  font-size: var(--heading-font-size-xxl);
 }
