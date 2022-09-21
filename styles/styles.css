@@ -14,6 +14,7 @@
   font-family: audi;
   src: url("/fonts/AudiTypeVF.woff2") format('woff2');
   font-weight: normal;
+  font-display: swap;
 }
 
  :root {
@@ -26,7 +27,7 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --footer-background-color: #000;
-  --footer-text-color: #fff;
+  --footer-text-color: rgb(242 242 242);
   --text-color: #333;
 
   /* fonts */
@@ -50,7 +51,7 @@
 
   /* nav height */
   --nav-height: 64px;
-
+  --separator-color: rgb(76 76 76);
 }
 
 body {

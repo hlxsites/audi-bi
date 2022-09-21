@@ -13,3 +13,27 @@ footer .footer {
 footer .footer p {
   margin: 0;
 }
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container button {
+  align-self: flex-end;
+  display: flex;
+  padding: 10px;
+}
+
+.footer-content-container {
+  padding-top: 20px;
+  border-top: 1px solid var(--separator-color);
+  display: flex;
+  font-size: 12px;
+  font-stretch: 105%;
+  justify-content: space-between;
+}
+
+.footer-content-container a {
+  color: var(--footer-text-color);
+}

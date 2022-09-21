@@ -19,7 +19,7 @@
 }
 
 .facts-row div:first-child {
-    border-right: 1px solid rgb(76 76 76);
+    border-right: 1px solid var(--separator-color);
 }
 
 .facts-row div p:first-child {
