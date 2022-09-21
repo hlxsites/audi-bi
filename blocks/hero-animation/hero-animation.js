@@ -1,3 +1,6 @@
+const mobileBreakpoint = 800;
+let globalWindowWidth = window.innerWidth;
+
 export default function decorate($block) {
   const $rows = [...$block.children];
   const $mobileRow = $rows.find(($row) => $row.children[0].textContent.toLowerCase() === 'mobile');
@@ -62,9 +65,18 @@ export default function decorate($block) {
     }
   };
 
+  const shouldResize = () => {
+    const resize = (window.innerWidth > mobileBreakpoint && globalWindowWidth <= mobileBreakpoint)
+      || (window.innerWidth < mobileBreakpoint && globalWindowWidth >= mobileBreakpoint);
+    globalWindowWidth = window.innerWidth;
+    return resize;
+  };
+
   window.addEventListener('resize', () => {
-    $block.querySelector('video').remove();
-    reLayout();
+    if (shouldResize()) {
+      $block.querySelector('video').remove();
+      reLayout();
+    }
   });
 
   reLayout();
