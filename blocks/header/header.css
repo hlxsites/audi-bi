@@ -20,10 +20,13 @@ header nav a:any-link {
 }
 
 header nav[aria-expanded='true'] {
-  grid-template: 'hamburger brand' 'sections sections' 'tools tools';
+  grid-template: 'hamburger .' 'brand brand' 'sections sections';
+  grid-template-rows: 56px 56px 1fr;
   grid-template-columns:  56px 1fr;
   overflow-y: scroll;
   min-height: 100vh;
+  text-align: left;
+  transform: translate(0, -100vh);
 }
 
 /* brand */
@@ -41,12 +44,33 @@ header nav .nav-brand p {
   justify-content: center;
 }
 
+header nav[aria-expanded='true'] .nav-brand p {
+  justify-content: flex-start;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(229 229 229);
+  padding-bottom: 12px;
+}
+
 header nav .nav-brand p * {
   display: none;
 }
 
-header nav .nav-brand p *:first-child {
+header nav[aria-expanded='false'] .nav-brand p *:first-child {
   display: initial;
+}
+
+header nav[aria-expanded='true'] .nav-brand p *:last-child {
+  display: initial;
+}
+
+header nav[aria-expanded='true'].animate-in  {
+  transition: transform 350ms ease-in-out;
+  transform: translate(0);
+}
+
+header nav.animate-out {
+  transition: transform 200ms ease-in-out;
 }
 
 header nav .nav-brand img {
@@ -148,7 +172,7 @@ header nav .nav-tools {
   height: 22px;
 }
 
-header nav .nav-tools p {
+header nav .nav-tools p { /* stylelint-disable-line */
   margin: 0;
 }
 

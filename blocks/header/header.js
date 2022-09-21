@@ -55,8 +55,21 @@ export default async function decorate(block) {
     hamburger.innerHTML = '<div class="nav-hamburger-icon"></div>';
     hamburger.addEventListener('click', () => {
       const expanded = nav.getAttribute('aria-expanded') === 'true';
-      document.body.style.overflowY = expanded ? '' : 'hidden';
-      nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      if (!expanded) {
+        document.body.style.overflowY = 'hidden';
+        nav.setAttribute('aria-expanded', 'true');
+        setTimeout(() => {
+          nav.classList.add('animate-in');
+        }, 0);
+      } else {
+        nav.classList.remove('animate-in');
+        nav.classList.add('animate-out');
+        setTimeout(() => {
+          nav.classList.remove('animate-out');
+          document.body.style.overflowY = '';
+          nav.setAttribute('aria-expanded', 'false');
+        }, 200);
+      }
     });
     nav.prepend(hamburger);
     nav.setAttribute('aria-expanded', 'false');
