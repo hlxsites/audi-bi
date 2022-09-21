@@ -5,7 +5,7 @@ export default function decorate($block) {
   const $rows = [...$block.children];
   const $mobileRow = $rows.find(($row) => $row.children[0].textContent.toLowerCase() === 'mobile');
   const $desktopRow = $rows.find(($row) => $row.children[0].textContent.toLowerCase() === 'desktop');
-  const $contentRow = $rows.at(-1);
+  const $contentRow = $rows.at(2);
 
   const [mobileVideo, desktopVideo] = [[$mobileRow, 'mobile'], [$desktopRow, 'desktop']]
     .map(([$row, typeHint]) => {
@@ -29,18 +29,20 @@ export default function decorate($block) {
   $mobileRow.remove();
   $desktopRow.remove();
 
-  // wrap content and buttons
-  $contentRow.children[0].classList.add('video-hero-content');
-  const $buttonWrapper = document.createElement('div');
-  [...$contentRow.children[0].children].slice(1).forEach(($button) => {
-    $buttonWrapper.appendChild($button.cloneNode(true));
-    $button.remove();
-  });
-  $buttonWrapper.classList.add('button-wrapper');
-  $contentRow.children[0].append($buttonWrapper);
+  if ($contentRow) {
+    // wrap content and buttons
+    $contentRow.children[0].classList.add('video-hero-content');
+    const $buttonWrapper = document.createElement('div');
+    [...$contentRow.children[0].children].slice(1).forEach(($button) => {
+      $buttonWrapper.appendChild($button.cloneNode(true));
+      $button.remove();
+    });
+    $buttonWrapper.classList.add('button-wrapper');
+    $contentRow.children[0].append($buttonWrapper);
 
-  if (!mobileVideo.videoUrl || !desktopVideo.videoUrl) {
-    $block.innerHTML = `Could not find videos (mobile ${mobileVideo.videoUrl}, desktop ${desktopVideo.videoUrl}), check your Hero Animation block`;
+    if (!mobileVideo.videoUrl || !desktopVideo.videoUrl) {
+      $block.innerHTML = `Could not find videos (mobile ${mobileVideo.videoUrl}, desktop ${desktopVideo.videoUrl}), check your Hero Animation block`;
+    }
   }
 
   const performLayout = (video) => {
