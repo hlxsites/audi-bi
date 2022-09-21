@@ -33,6 +33,7 @@
   --body-font-family: audi, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --title-font-stretch: 130%;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -260,8 +261,12 @@ main .section.black div {
   text-align: center;
 }
 
+main h1, h2, h3 {
+  font-stretch: var(--title-font-stretch);
+  font-weight: 400;
+}
+
 main .section.black div h3 {
-  font-stretch: 130%;
   font-weight: 400;
   line-height: 40px;
   font-size: 28px;
@@ -271,4 +276,12 @@ main .section.black div p {
   font-size: 15px;
   font-weight: 200;
   line-height: 1.8em;
+}
+
+.default-content-wrapper {
+  text-align: center;
+}
+
+.section.large-title h2 {
+  font-size: var(--heading-font-size-xxl);
 }
