@@ -37,3 +37,10 @@ footer .footer p {
 .footer-content-container a {
   color: var(--footer-text-color);
 }
+
+@media (max-width: 800px) {
+  .footer-content-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

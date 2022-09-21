@@ -36,6 +36,17 @@ header .nav-brand {
 
 header nav .nav-brand p {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .nav-brand p * {
+  display: none;
+}
+
+header nav .nav-brand p *:first-child {
+  display: initial;
 }
 
 header nav .nav-brand img {
@@ -161,6 +172,10 @@ header nav[aria-expanded='true'] .nav-tools li {
     justify-content: space-between;
     height: var(--nav-height);
     padding: 16px 2rem;
+  }
+
+  header nav .nav-brand p * {
+    display: initial;
   }
 
   header nav .nav-sections > ul > li.nav-drop {
