@@ -41,6 +41,13 @@ main .hero img {
     background: rgb(0 0 0 / 0%) linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0)) repeat scroll 0% 0%;
 }
 
+main .hero h1 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
 main .hero .hero-content-wrapper h1 {
     margin: 0;
     text-align: start;
@@ -52,11 +59,4 @@ main .hero .hero-content-wrapper h1 {
     font-size: 16px;
     font-weight: 400;
     font-stretch: var(--title-font-stretch);
-}
-
-main .hero h1 {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
 }
