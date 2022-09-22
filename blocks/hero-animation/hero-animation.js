@@ -47,8 +47,8 @@ export default function decorate($block) {
 
   const performLayout = (video) => {
     const videoTag = document.createElement('video');
-    videoTag.setAttribute('muted', 'true');
-    videoTag.setAttribute('autoplay', 'true');
+    videoTag.toggleAttribute('muted', true);
+    videoTag.toggleAttribute('autoplay', true);
     videoTag.setAttribute('playsinline', 'true');
     videoTag.setAttribute('loop', 'true');
     videoTag.setAttribute('poster', video.poster);
@@ -57,6 +57,7 @@ export default function decorate($block) {
     videoTag.setAttribute('height', '1080');
     videoTag.innerHTML = `<source src="${video.videoUrl}" type="video/mp4">`;
     $contentRow.prepend(videoTag);
+    videoTag.muted = true;
   };
 
   const reLayout = () => {
