@@ -76,4 +76,8 @@ export default async function decorate(block) {
     decorateIcons(nav);
     block.append(nav);
   }
+
+  document.getElementsByClassName('nav-brand')[0]?.addEventListener('click', () => {
+    window.location = '/';
+  });
 }

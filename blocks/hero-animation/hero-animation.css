@@ -43,6 +43,7 @@
 }
 
 .video-hero-content {
+    width: 88%;
     position: absolute;
     bottom: 0;
     left: 0;
