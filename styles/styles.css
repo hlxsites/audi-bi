@@ -118,7 +118,6 @@ pre {
 }
 
 /* buttons */
-
 a.button:any-link, button {
   font-size: 16px;
   font-family: var(--font-family-body);
@@ -142,7 +141,22 @@ a.button:any-link, button {
   transition-property: color, background-color;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover, a.button:focus {
+  background-color: var(--active-background-color);
+  cursor: pointer;
+}
+
+.black a.button:any-link, button {
+  border: 1px solid white;
+}
+
+.column-light a.button:any-link, button {
+  background: none;
+  color: black;
+  border: 1px solid black;
+}
+
+button:hover, button:focus {
   background-color: var(--active-background-color);
   cursor: pointer;
 }
@@ -251,13 +265,20 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+.section.list p {
+  font-size: 16px;
+  font-stretch: 105%;
+  font-weight: 400;
+  color: rgb(51 51 51);
+}
+
 main .section.black {
   background: black;
   margin: 0;
   color: white;
 }
 
-main .section.black div {
+main .section.black > div {
   max-width: 500px;
   text-align: center;
 }
@@ -303,16 +324,9 @@ main .section.black div p {
   font-size: 28px;
   font-stretch: var(--title-font-stretch);
   font-weight: 400;
-  color: rgb(51, 51, 51);
+  color: rgb(51 51 51);
   margin-block-start: 48px;
   margin-block-end: 48px;
-}
-
-.section.list p {
-  font-size: 16px;
-  font-stretch: 105%;
-  font-weight: 400;
-  color: rgb(51, 51, 51);
 }
 
 .section.list > .default-content-wrapper {
