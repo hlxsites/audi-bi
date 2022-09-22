@@ -7,6 +7,18 @@
     width: 100%;
 }
 
+.columns.black {
+    color: white;
+    background: black;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.columns.black h2, .columns.black h3,.columns.black p {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
 @media (min-width: 900px) {
     .columns > div {
         display: flex;
