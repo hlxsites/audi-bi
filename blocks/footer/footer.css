@@ -23,6 +23,7 @@ footer .footer p {
   align-self: flex-end;
   display: flex;
   padding: 10px;
+  color: white;
 }
 
 .footer-content-container {
