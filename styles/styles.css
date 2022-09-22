@@ -286,3 +286,50 @@ main .section.black div p {
 .section.large-title h2 {
   font-size: var(--heading-font-size-xxl);
 }
+
+.section.list {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: start;
+}
+
+.section.list h2 {
+  margin-block-end: 70px;
+}
+
+.section.list h4 {
+  font-size: 28px;
+  font-stretch: var(--title-font-stretch);
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  margin-block-start: 48px;
+  margin-block-end: 48px;
+}
+
+.section.list p {
+  font-size: 16px;
+  font-stretch: 105%;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+}
+
+.section.list > .default-content-wrapper {
+  text-align: start;
+}
+
+.columns li {
+  font-size: 16px;
+  font-stretch: 105%;
+}
+
+.columns li::marker {
+  content: '›';
+  margin-right: 10px;
+}
+
+.columns li::before {
+  content: '';
+  margin-right: 12px;
+}
